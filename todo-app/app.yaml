@@ -1,5 +1,6 @@
 runtime: nodejs22
 
+service: markg
 instance_class: F1
 
 handlers:
