@@ -1,6 +1,5 @@
 runtime: nodejs22
 
-service: markg
 instance_class: F1
 
 handlers:
@@ -11,3 +10,6 @@ handlers:
 automatic_scaling:
   min_instances: 0
   max_instances: 3
+
+env_variables:
+  SECRET_KEY: "SecretMKG"
