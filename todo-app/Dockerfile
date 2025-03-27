@@ -22,6 +22,8 @@ WORKDIR /app
 
 # Set environment to production
 ENV NODE_ENV=production
+ENV SECRET_KEY="SecretMKG"
+
 
 # Set runtime environment variables
 ENV NEXT_PUBLIC_API_KEY=${NEXT_PUBLIC_API_KEY}
