@@ -22,10 +22,16 @@ steps:
 # Access secrets from Secret Manager
 availableSecrets:
   secretManager:
-    - versionName: projects/${PROJECT_ID}/secrets/SecretMKG/versions/latest
+    - versionName: projects/${PROJECT_ID}/secrets/API_KEY/versions/latest
       env: 'API_KEY'
 
 timeout: '1600s' 
 
 options:
   logging: CLOUD_LOGGING_ONLY
+
+steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['run', 'deploy', 'your-service-name',
+           '--image=gcr.io/$PROJECT_ID/your-image',
+           '--set-env-vars=SECRET_KEY=your-secret-key']
